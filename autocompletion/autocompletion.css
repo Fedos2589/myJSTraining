@@ -30,3 +30,14 @@ html {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-direction: column; }
+
+.country,
+.dropdown__item {
+  padding: 5px;
+  width: 300px; }
+
+.dropdown {
+  border: 1px solid black; }
+
+.dropdown__item:hover {
+  background-color: gray; }
