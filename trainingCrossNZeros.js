@@ -9,7 +9,7 @@ var xWins = document.querySelector('.x span');
 var oWins = document.querySelector('.o span');
 var draw = document.querySelector('.draw span');
 var rows = document.querySelectorAll('.cross-n-zeros__table tr');
-var turn = turnSpan.innerHTML;
+var res = '';
 
 table.addEventListener('click', process);
 
@@ -18,24 +18,21 @@ btn.addEventListener('click', function(){
 		cells[i].innerHTML = '';
 	}
 
-	turn = x;
+	turnSpan.innerHTML = 'x';
 	table.addEventListener('click', process);
 })
 
 function process(event){
 	var cell = event.target;
-	var cellVal = cell.innerHTML;
 
-	if (turn == x){
-		cellVal = 'x';
-		turn = 'o';
-
+	if (turnSpan.innerHTML == 'x'){
+		cell.innerHTML = 'x';
+		turnSpan.innerHTML = 'o';
 	}else{
-		cellVal = 'o';
-		turn = 'x';
+		cell.innerHTML = 'o';
+		turnSpan.innerHTML = 'x';
 	}
 
-	var res = '';
 	for (var i = 0; i < cells.length; i++){
 		if (cells[0].innerHTML == cells[1].innerHTML == cells[2].innerHTML != '' || cells[3].innerHTML == cells[4].innerHTML == cells[5].innerHTML !='' || cells[6].innerHTML == cells[7].innerHTML == cells[8].innerHTML !='' || cells[0].innerHTML == cells[3].innerHTML == cells[6].innerHTML !='' || cells[1].innerHTML == cells[4].innerHTML == cells[7].innerHTML !='' || cells[2].innerHTML == cells[5].innerHTML == cells[8].innerHTML !='' || cells[0].innerHTML == cells[4].innerHTML == cells[8].innerHTML !='' || cells[2].innerHTML == cells[4].innerHTML == cells[6].innerHTML !='')/*не понимаю как правильно прописать условие окончания партии, это выглядит как бред и при этом не работает*/{
 			res = cells[i].innerHTML;
@@ -43,11 +40,11 @@ function process(event){
 	}
 
 	if (res == 'x'){
-		table.removeEventListener('click', process)
-		xWins.innerHTML = parseInt(xWins.innerHTML, 10) + 1
+		table.removeEventListener('click', process);
+		xWins.innerHTML = parseInt(xWins.innerHTML, 10) + 1;
 	}else if (res == 'o'){
-		table.removeEventListener('click', process)
-		oWins.innerHTML = parseInt(oWins.innerHTML, 10) + 1
+		table.removeEventListener('click', process);
+		oWins.innerHTML = parseInt(oWins.innerHTML, 10) + 1;
 	}
 }
 
