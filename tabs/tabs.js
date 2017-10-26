@@ -14,6 +14,4 @@ for (var i = 0; i < controls.length; i++){
 			}
 		}
 	})
-
-
 }
