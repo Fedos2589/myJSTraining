@@ -16,10 +16,52 @@ html{
 	justify-content: center;
 	-ms-align-items: center;
 	align-items: center;
-	-webkit-flex-direction: column;
-	-moz-flex-direction: column;
-	-ms-flex-direction: column;
-	-o-flex-direction: column;
 	flex-direction: column;
 }
+
+.btns-wrapper,
+.fibonacci-wrap,
+.p-wrapper,
+.changesGistory-wrap{
+	display: flex;
+}
+
+.btn,
+.fib-btn{
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+}
+
+.colorChanger{
+	width: 40px;
+	height: 40px;
+	margin: 20px;
+	background-color: lightgrey;
+}
+
+.changer-wrapper{
+	width: 100px;
+	margin: 10px;
+
+	.changes{
+		width: 100%;
+	}
+
+	span{
+		width: 48%;
+		display: inline-block;
+		padding: 10px;
+		cursor: pointer;
+
+		&.left{
+			text-align: left;
+		}
+
+		&.right{
+			text-align: right;
+		}
+	}
+}
+
 
